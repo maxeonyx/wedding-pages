@@ -79,6 +79,36 @@ body {
   transform: scale(1.02);
 }
 
+/* Scroll Indicator */
+.scroll-indicator {
+  text-align: center;
+  margin: 30px 0 20px;
+  opacity: 0.7;
+  animation: float 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  color: var(--wildflower-green);
+  margin-bottom: 8px;
+}
+
+.scroll-text {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 /* RSVP Section */
 .rsvp-section {
   margin: 60px 0;
@@ -392,6 +422,14 @@ body.reception-habesha .reception-time-habesha {
     max-height: 60vh;
   }
   
+  .scroll-indicator {
+    margin: 20px 0 15px;
+  }
+  
+  .scroll-text {
+    font-size: 13px;
+  }
+  
   .details-card {
     padding: 25px;
     margin: 20px 0;
@@ -433,6 +471,14 @@ body.reception-habesha .reception-time-habesha {
 @media (max-width: 480px) {
   .invitation-img {
     max-height: 50vh;
+  }
+  
+  .scroll-indicator {
+    margin: 15px 0 10px;
+  }
+  
+  .scroll-text {
+    font-size: 12px;
   }
   
   .details-card {
