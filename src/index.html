@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kibra & Max - Wedding Celebration</title>
+    <link rel="stylesheet" href="./styles.css">
+    
+    <!-- VARIANT CONFIG - This line will be replaced by build script -->
+    <style>:root { --variant: 'ceremony-western'; }</style>
+    
+    <!-- Beautiful wildflower-inspired fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Variant Controller Script -->
+    <script>
+        // Read the CSS variable and apply appropriate body class for variant control
+        document.addEventListener('DOMContentLoaded', function() {
+            const variant = getComputedStyle(document.documentElement).getPropertyValue('--variant').trim().replace(/['"]/g, '');
+            if (variant) {
+                document.body.className = variant;
+            }
+        });
+        
+        // Copy account number to clipboard
+        function copyAccountNumber() {
+            const accountNumber = document.getElementById('accountNumber').textContent;
+            const copyButton = document.querySelector('.copy-button');
+            const copyText = copyButton.querySelector('.copy-text');
+            
+            navigator.clipboard.writeText(accountNumber).then(function() {
+                // Success feedback
+                copyText.textContent = 'Copied!';
+                copyButton.classList.add('copied');
+                
+                // Reset after 2 seconds
+                setTimeout(function() {
+                    copyText.textContent = 'Copy';
+                    copyButton.classList.remove('copied');
+                }, 2000);
+            }).catch(function(err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = accountNumber;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                copyText.textContent = 'Copied!';
+                copyButton.classList.add('copied');
+                setTimeout(function() {
+                    copyText.textContent = 'Copy';
+                    copyButton.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with invitation image -->
+        <header class="hero">
+            <div class="wildflower-border top"></div>
+            
+            <div class="invitation-image">
+                <img src="./invitation.jpeg" alt="Kibra & Max Wedding Invitation" class="invitation-img">
+            </div>
+            
+            <div class="wildflower-border bottom"></div>
+        </header>
+
+        <!-- RSVP Section - Prominent placement -->
+        <section class="rsvp-section">
+            <div class="rsvp-card">
+                <h3>Please RSVP</h3>
+                <p>We're excited to celebrate with you!</p>
+                <a href="https://rsvp.online/mk25" class="rsvp-button" target="_blank">RSVP Here</a>
+            </div>
+        </section>
+
+        <!-- Ceremony Details - shown/hidden based on variant -->
+        <section class="ceremony-details variant-content" data-show="ceremony-western,ceremony-habesha">
+            <div class="details-card">
+                <h3>Ceremony</h3>
+                <div class="time-location">
+                    <p class="time">10 o'clock in the morning</p>
+                    <p class="venue">Gear Homestead</p>
+                    <p class="address">Porirua, Wellington</p>
+                </div>
+                <div class="ceremony-info">
+                    <p>The ceremony will be held in the beautiful gardens of this lovely old villa, weather permitting. Around 60 guests will join us for this intimate celebration, followed by champagne and canapés. Guests are welcome to stay until around 1:30pm.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reception Details -->
+        <section class="reception-details">
+            <!-- Reception-only welcome message - moved to top and simplified -->
+            <div class="reception-only-welcome variant-content" data-show="reception-western,reception-habesha">
+                <p><em>You are warmly invited to join us for our reception celebration.</em></p>
+            </div>
+            
+            <div class="details-card">
+                <h3>Reception</h3>
+                <div class="time-location">
+                    <!-- Time varies based on variant -->
+                    <p class="time reception-time-western" data-show="ceremony-western,reception-western">6 o'clock in the evening</p>
+                    <p class="time reception-time-habesha" data-show="ceremony-habesha,reception-habesha">4 o'clock in the afternoon</p>
+                    <p class="venue">St Patrick's College</p>
+                    <p class="venue-detail">O'Shea PAC Hall</p>
+                    <p class="address">Kilbirnie, Wellington</p>
+                </div>
+                <div class="reception-info">
+                    <p>We'll be hosting the wider Wellington Tigray community with Ethiopian food and drink, dancing and celebration until late into the evening.</p>
+                </div>
+                
+                <!-- Capacity explanation for reception-only guests -->
+                <div class="capacity-note variant-content" data-show="reception-western,reception-habesha">
+                    <p><small>Due to capacity constraints at our ceremony venue, we're only able to accommodate a limited number of guests for the morning celebration. We're so excited to celebrate with you at the reception!</small></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gap reception4pm - only for ceremony guests -->
+        <section class="gap-info variant-content" data-show="ceremony-western,ceremony-habesha">
+            <div class="details-card">
+                <h3>Between Ceremony & Reception</h3>
+                <p>After the ceremony venue closes at 1:30pm, we encourage guests to explore Wellington and have lunch before the evening festivities begin.</p>
+            </div>
+        </section>
+
+        <!-- What to Wear -->
+        <section class="dress-code">
+            <div class="details-card">
+                <h3>What to Wear</h3>
+                <p>In the morning, western style formal wear is perfect. For the evening celebration, this is also wonderful, though we will be wearing Ethiopian dress and you're welcome to join us in this tradition if you wish.</p>
+            </div>
+        </section>
+
+        <!-- Gifts -->
+        <section class="gifts">
+            <div class="details-card">
+                <h3>Gifts</h3>
+                <p>We are not asking for physical gifts as we have a small home and will be travelling. Instead, we would be grateful for contributions to help us start our married life together.</p>
+                <div class="bank-details">
+                    <p><strong>Bank Transfer Details:</strong></p>
+                    <p>MAXWELL CLARKE, KIBRA TESFAY</p>
+                    <div class="account-number-container">
+                        <p class="account-number" id="accountNumber">38-9005-0500590-16</p>
+                        <button class="copy-button" onclick="copyAccountNumber()" title="Copy account number">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="copy-text">Copy</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="wildflower-border bottom"></div>
+            <p>We can't wait to celebrate with you!</p>
+        </footer>
+    </div>
+</body>
+</html>

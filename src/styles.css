@@ -1,0 +1,450 @@
+/* Wedding Website Styles - Wildflower Theme */
+:root {
+  /* Colors inspired by the wildflower invitation */
+  --cream-white: #fefefe;
+  --warm-white: #faf9f7;
+  --text-dark: #2c2c2c;
+  --text-light: #5a5a5a;
+  --wildflower-green: #7a9b76;
+  --wildflower-purple: #8b7ca3;
+  --wildflower-pink: #c4969c;
+  --wildflower-blue: #7590b5;
+  --accent-gold: #c9a961;
+  
+  /* Typography */
+  --font-main: 'Crimson Text', serif;
+  --font-accent: 'Montserrat', sans-serif;
+  
+  /* The build script will replace this line with the appropriate variant */
+  --variant: 'ceremony-western';
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--cream-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Wildflower Border Decorations */
+.wildflower-border {
+  height: 60px;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 60'%3E%3Cpath d='M50 30 Q 60 10, 70 30 Q 80 50, 90 30' stroke='%237a9b76' stroke-width='2' fill='none'/%3E%3Cpath d='M150 25 Q 160 45, 170 25 Q 180 5, 190 25' stroke='%238b7ca3' stroke-width='2' fill='none'/%3E%3Cpath d='M250 35 Q 260 15, 270 35 Q 280 55, 290 35' stroke='%23c4969c' stroke-width='2' fill='none'/%3E%3Cpath d='M350 20 Q 360 40, 370 20 Q 380 0, 390 20' stroke='%237590b5' stroke-width='2' fill='none'/%3E%3Cpath d='M450 40 Q 460 20, 470 40 Q 480 60, 490 40' stroke='%237a9b76' stroke-width='2' fill='none'/%3E%3Cpath d='M550 15 Q 560 35, 570 15 Q 580 -5, 590 15' stroke='%238b7ca3' stroke-width='2' fill='none'/%3E%3Cpath d='M650 45 Q 660 25, 670 45 Q 680 65, 690 45' stroke='%23c4969c' stroke-width='2' fill='none'/%3E%3Cpath d='M750 30 Q 760 50, 770 30 Q 780 10, 790 30' stroke='%237590b5' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+  opacity: 0.6;
+  margin: 20px 0;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 40px 0 60px;
+}
+
+/* Invitation Image */
+.invitation-image {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.invitation-img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.invitation-img:hover {
+  transform: scale(1.02);
+}
+
+/* RSVP Section */
+.rsvp-section {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.rsvp-card {
+  background: linear-gradient(135deg, var(--wildflower-green), var(--wildflower-blue));
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.rsvp-card h3 {
+  font-family: var(--font-accent);
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.rsvp-card p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.rsvp-button {
+  display: inline-block;
+  background: white;
+  color: var(--wildflower-green);
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-family: var(--font-accent);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.rsvp-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Details Cards */
+.details-card {
+  background: var(--warm-white);
+  padding: 40px;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--wildflower-green);
+}
+
+.details-card h3 {
+  font-family: var(--font-accent);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--wildflower-green);
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.time-location {
+  margin-bottom: 25px;
+}
+
+.time {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.venue {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--wildflower-purple);
+  margin-bottom: 5px;
+}
+
+.venue-detail {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+
+.address {
+  font-size: 16px;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.ceremony-info, .reception-info {
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+.reception-only-msg {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(196, 150, 156, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid var(--wildflower-pink);
+}
+
+.reception-only-msg em {
+  color: var(--wildflower-purple);
+  font-weight: 500;
+}
+
+/* Reception-only welcome message - simple and elegant */
+.reception-only-welcome {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.reception-only-welcome p {
+  font-size: 20px;
+  color: var(--wildflower-green);
+  font-weight: 500;
+  margin: 0;
+}
+
+.reception-only-welcome em {
+  font-style: italic;
+}
+
+/* Capacity explanation note */
+.capacity-note {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(121, 155, 118, 0.2);
+}
+
+.capacity-note p {
+  margin: 0;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.capacity-note small {
+  font-size: 14px;
+}
+
+/* Plus Ones Section */
+.plus-ones-ceremony,
+.plus-ones-reception {
+  line-height: 1.7;
+}
+
+.plus-ones-ceremony {
+  color: var(--text-dark);
+}
+
+.plus-ones-reception {
+  color: var(--wildflower-green);
+  font-weight: 500;
+}
+
+/* Bank Details */
+.bank-details {
+  margin-top: 20px;
+  padding: 25px;
+  background: rgba(250, 249, 247, 0.8);
+  border-radius: 10px;
+  border: 1px solid rgba(121, 155, 118, 0.2);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.bank-details p {
+  margin: 8px 0;
+  font-family: var(--font-accent);
+  color: var(--text-dark);
+}
+
+.bank-details strong {
+  color: var(--wildflower-green);
+  font-weight: 500;
+}
+
+.account-number-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.account-number {
+  font-family: var(--font-accent);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-dark);
+  background: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(121, 155, 118, 0.2);
+  margin: 0;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--warm-white);
+  color: var(--wildflower-green);
+  border: 1px solid rgba(121, 155, 118, 0.3);
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.copy-button:hover {
+  background: var(--wildflower-green);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.copy-button.copied {
+  background: var(--accent-gold);
+  color: white;
+  border-color: var(--accent-gold);
+  transform: scale(0.98);
+}
+
+.copy-button svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+footer p {
+  font-family: var(--font-accent);
+  font-size: 18px;
+  color: var(--wildflower-green);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Variant System - Show/Hide Content Based on CSS Variable */
+/* 
+The build script will replace the --variant value to control what content is visible:
+- 'ceremony-western': Full ceremony + reception info, 6pm reception
+- 'reception-western': Reception only, 6pm reception  
+- 'ceremony-habesha': Full ceremony + reception info, 4pm reception
+- 'reception-habesha': Reception only, 4pm reception
+*/
+
+/* Hide all variant-specific content by default */
+.variant-content {
+  display: none;
+}
+
+/* Hide all reception times by default */
+.reception-time-western,
+.reception-time-habesha {
+  display: none;
+}
+
+/* Control variant display through body classes that will be added by JavaScript */
+/* We'll use a simple script to read the CSS variable and add appropriate classes */
+
+/* Show ceremony content for ceremony variants */
+body.ceremony-western .variant-content[data-show*="ceremony-western"],
+body.ceremony-habesha .variant-content[data-show*="ceremony-habesha"] {
+  display: block;
+}
+
+/* Show reception-only content for reception variants */
+body.reception-western .variant-content[data-show*="reception-western"],
+body.reception-habesha .variant-content[data-show*="reception-habesha"] {
+  display: block;
+}
+
+/* Show correct reception times */
+body.ceremony-western .reception-time-western,
+body.reception-western .reception-time-western {
+  display: block;
+}
+
+body.ceremony-habesha .reception-time-habesha,
+body.reception-habesha .reception-time-habesha {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .invitation-img {
+    max-height: 60vh;
+  }
+  
+  .details-card {
+    padding: 25px;
+    margin: 20px 0;
+  }
+  
+  .rsvp-card {
+    padding: 30px 20px;
+  }
+  
+  .wildflower-border {
+    height: 40px;
+  }
+  
+  .account-number-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .account-number {
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .copy-button {
+    align-self: center;
+    justify-self: center;
+  }
+  
+  .reception-only-welcome p {
+    font-size: 18px;
+  }
+  
+  .capacity-note small {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .invitation-img {
+    max-height: 50vh;
+  }
+  
+  .details-card {
+    padding: 20px;
+  }
+  
+  .rsvp-button {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+  
+  .account-number {
+    font-size: 14px;
+  }
+}
