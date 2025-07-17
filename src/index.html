@@ -6,9 +6,6 @@
     <title>Kibra & Max - Wedding Celebration</title>
     <link rel="stylesheet" href="./styles.css">
     
-    <!-- VARIANT CONFIG - This line will be replaced by build script -->
-    <style>:root { --variant: 'ceremony-western'; }</style>
-    
     <!-- Beautiful wildflower-inspired fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,14 +13,6 @@
     
     <!-- Variant Controller Script -->
     <script>
-        // Read the CSS variable and apply appropriate body class for variant control
-        document.addEventListener('DOMContentLoaded', function() {
-            const variant = getComputedStyle(document.documentElement).getPropertyValue('--variant').trim().replace(/['"]/g, '');
-            if (variant) {
-                document.body.className = variant;
-            }
-        });
-        
         // Copy account number to clipboard
         function copyAccountNumber() {
             const accountNumber = document.getElementById('accountNumber').textContent;
@@ -59,7 +48,7 @@
         }
     </script>
 </head>
-<body>
+<body class="ceremony-western">
     <div class="container">
         <!-- Header with invitation image -->
         <header class="hero">

@@ -14,9 +14,6 @@
   /* Typography */
   --font-main: 'Crimson Text', serif;
   --font-accent: 'Montserrat', sans-serif;
-  
-  /* The build script will replace this line with the appropriate variant */
-  --variant: 'ceremony-western';
 }
 
 /* Base Styles */
@@ -366,9 +363,9 @@ footer p {
   letter-spacing: 1px;
 }
 
-/* Variant System - Show/Hide Content Based on CSS Variable */
+/* Variant System - Show/Hide Content Based on Body Class */
 /* 
-The build script will replace the --variant value to control what content is visible:
+The build script will replace the body class to control what content is visible:
 - 'ceremony-western': Full ceremony + reception info, 6pm reception
 - 'reception-western': Reception only, 6pm reception  
 - 'ceremony-habesha': Full ceremony + reception info, 4pm reception
@@ -386,8 +383,7 @@ The build script will replace the --variant value to control what content is vis
   display: none;
 }
 
-/* Control variant display through body classes that will be added by JavaScript */
-/* We'll use a simple script to read the CSS variable and add appropriate classes */
+/* Control variant display through body classes set by the build script */
 
 /* Show ceremony content for ceremony variants */
 body.ceremony-western .variant-content[data-show*="ceremony-western"],

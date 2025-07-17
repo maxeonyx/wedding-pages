@@ -26,19 +26,19 @@ cp "src/images/Invitation - Reception - Habesha.jpeg" "public/reception4pm/invit
 
 # Generate variant 1: ceremony6pm/index.html (Ceremony + Reception, Western time - 6pm)
 echo "<!-- VARIANT: Full ceremony + reception, 6pm start -->" > public/ceremony6pm/index.html
-sed 's/:root { --variant: '\''ceremony-western'\''; }/:root { --variant: '\''ceremony-western'\''; }/' src/index.html >> public/ceremony6pm/index.html
+sed 's/class="ceremony-western"/class="ceremony-western"/' src/index.html >> public/ceremony6pm/index.html
 
 # Generate variant 2: reception6pm/index.html (Reception only, Western time - 6pm)  
 echo "<!-- VARIANT: Reception only, 6pm start -->" > public/reception6pm/index.html
-sed 's/:root { --variant: '\''ceremony-western'\''; }/:root { --variant: '\''reception-western'\''; }/' src/index.html >> public/reception6pm/index.html
+sed 's/class="ceremony-western"/class="reception-western"/' src/index.html >> public/reception6pm/index.html
 
 # Generate variant 3: ceremony4pm/index.html (Ceremony + Reception, Habesha time - 4pm)
 echo "<!-- VARIANT: Full ceremony + reception, 4pm start -->" > public/ceremony4pm/index.html  
-sed 's/:root { --variant: '\''ceremony-western'\''; }/:root { --variant: '\''ceremony-habesha'\''; }/' src/index.html >> public/ceremony4pm/index.html
+sed 's/class="ceremony-western"/class="ceremony-habesha"/' src/index.html >> public/ceremony4pm/index.html
 
 # Generate variant 4: reception4pm/index.html (Reception only, Habesha time - 4pm)
 echo "<!-- VARIANT: Reception only, 4pm start -->" > public/reception4pm/index.html
-sed 's/:root { --variant: '\''ceremony-western'\''; }/:root { --variant: '\''reception-habesha'\''; }/' src/index.html >> public/reception4pm/index.html
+sed 's/class="ceremony-western"/class="reception-habesha"/' src/index.html >> public/reception4pm/index.html
 
 echo "✅ Build complete! Generated 4 variants:"
 echo "   📁 public/ceremony6pm/         - Full ceremony + reception (6pm)"
