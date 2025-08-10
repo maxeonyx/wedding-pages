@@ -10,7 +10,7 @@
   --wildflower-pink: #c4969c;
   --wildflower-blue: #7590b5;
   --accent-gold: #c9a961;
-  
+
   /* Typography */
   --font-main: 'Crimson Text', serif;
   --font-accent: 'Montserrat', sans-serif;
@@ -40,7 +40,7 @@ body {
 /* Wildflower Border Decorations */
 .wildflower-border {
   height: 60px;
-  background-image: 
+  background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 60'%3E%3Cpath d='M50 30 Q 60 10, 70 30 Q 80 50, 90 30' stroke='%237a9b76' stroke-width='2' fill='none'/%3E%3Cpath d='M150 25 Q 160 45, 170 25 Q 180 5, 190 25' stroke='%238b7ca3' stroke-width='2' fill='none'/%3E%3Cpath d='M250 35 Q 260 15, 270 35 Q 280 55, 290 35' stroke='%23c4969c' stroke-width='2' fill='none'/%3E%3Cpath d='M350 20 Q 360 40, 370 20 Q 380 0, 390 20' stroke='%237590b5' stroke-width='2' fill='none'/%3E%3Cpath d='M450 40 Q 460 20, 470 40 Q 480 60, 490 40' stroke='%237a9b76' stroke-width='2' fill='none'/%3E%3Cpath d='M550 15 Q 560 35, 570 15 Q 580 -5, 590 15' stroke='%238b7ca3' stroke-width='2' fill='none'/%3E%3Cpath d='M650 45 Q 660 25, 670 45 Q 680 65, 690 45' stroke='%23c4969c' stroke-width='2' fill='none'/%3E%3Cpath d='M750 30 Q 760 50, 770 30 Q 780 10, 790 30' stroke='%237590b5' stroke-width='2' fill='none'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: center;
@@ -68,7 +68,7 @@ body {
   height: auto;
   max-height: 80vh;
   border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -98,9 +98,12 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
@@ -117,7 +120,7 @@ body {
   color: white;
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .rsvp-card h3 {
@@ -146,12 +149,12 @@ body {
   font-size: 16px;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .rsvp-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Details Cards */
@@ -160,7 +163,7 @@ body {
   padding: 40px;
   margin: 30px 0;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border-left: 4px solid var(--wildflower-green);
 }
 
@@ -184,6 +187,15 @@ body {
   margin-bottom: 10px;
 }
 
+.event-date {
+  font-size: 16px;
+  color: var(--text-dark);
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0 0 5px 0;
+}
+
+
 .venue {
   font-size: 22px;
   font-weight: 600;
@@ -203,7 +215,8 @@ body {
   font-style: italic;
 }
 
-.ceremony-info, .reception-info {
+.ceremony-info,
+.reception-info {
   margin-top: 20px;
   line-height: 1.7;
 }
@@ -277,7 +290,7 @@ body {
   background: rgba(250, 249, 247, 0.8);
   border-radius: 10px;
   border: 1px solid rgba(121, 155, 118, 0.2);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
 .bank-details p {
@@ -309,7 +322,7 @@ body {
   border: 1px solid rgba(121, 155, 118, 0.2);
   margin: 0;
   letter-spacing: 0.5px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .copy-button {
@@ -326,14 +339,14 @@ body {
   font-size: 13px;
   font-weight: 500;
   transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .copy-button:hover {
   background: var(--wildflower-green);
   color: white;
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .copy-button.copied {
@@ -364,10 +377,10 @@ footer p {
 }
 
 /* Variant System - Show/Hide Content Based on Body Class */
-/* 
+/*
 The build script will replace the body class to control what content is visible:
 - 'ceremony-western': Full ceremony + reception info, 6pm reception
-- 'reception-western': Reception only, 6pm reception  
+- 'reception-western': Reception only, 6pm reception
 - 'ceremony-habesha': Full ceremony + reception info, 4pm reception
 - 'reception-habesha': Reception only, 4pm reception
 */
@@ -413,52 +426,52 @@ body.reception-habesha .reception-time-habesha {
   .container {
     padding: 0 15px;
   }
-  
+
   .invitation-img {
     max-height: 60vh;
   }
-  
+
   .scroll-indicator {
     margin: 20px 0 15px;
   }
-  
+
   .scroll-text {
     font-size: 13px;
   }
-  
+
   .details-card {
     padding: 25px;
     margin: 20px 0;
   }
-  
+
   .rsvp-card {
     padding: 30px 20px;
   }
-  
+
   .wildflower-border {
     height: 40px;
   }
-  
+
   .account-number-container {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
   }
-  
+
   .account-number {
     font-size: 15px;
     text-align: center;
   }
-  
+
   .copy-button {
     align-self: center;
     justify-self: center;
   }
-  
+
   .reception-only-welcome p {
     font-size: 18px;
   }
-  
+
   .capacity-note small {
     font-size: 13px;
   }
@@ -468,24 +481,24 @@ body.reception-habesha .reception-time-habesha {
   .invitation-img {
     max-height: 50vh;
   }
-  
+
   .scroll-indicator {
     margin: 15px 0 10px;
   }
-  
+
   .scroll-text {
     font-size: 12px;
   }
-  
+
   .details-card {
     padding: 20px;
   }
-  
+
   .rsvp-button {
     padding: 12px 25px;
     font-size: 14px;
   }
-  
+
   .account-number {
     font-size: 14px;
   }
