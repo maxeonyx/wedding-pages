@@ -376,6 +376,76 @@ footer p {
   letter-spacing: 1px;
 }
 
+/* Rooms Table (Accommodation) */
+.rooms-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  font-family: var(--font-accent);
+  font-size: 15px;
+  background: white;
+  border: 1px solid rgba(121, 155, 118, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rooms-table caption.rooms-caption {
+  caption-side: top;
+  padding: 10px 12px 6px;
+  font-family: var(--font-accent);
+  font-weight: 600;
+  color: var(--wildflower-green);
+  text-align: left;
+}
+
+.rooms-table thead th {
+  background: linear-gradient(135deg, var(--wildflower-green), var(--wildflower-blue));
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.3px;
+  padding: 12px 14px;
+}
+
+.rooms-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(121, 155, 118, 0.15);
+  color: var(--text-dark);
+}
+
+.rooms-table tbody tr:nth-child(even) {
+  background: rgba(121, 155, 118, 0.05);
+}
+
+.rooms-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.rooms-table td.room,
+.rooms-table td.nights {
+  font-weight: 600;
+  color: var(--wildflower-purple);
+}
+
+.rooms-table td.nights {
+  text-align: right;
+  width: 90px;
+}
+
+@media (max-width: 520px) {
+  .rooms-table {
+    font-size: 14px;
+  }
+  .rooms-table thead th,
+  .rooms-table td {
+    padding: 10px 12px;
+  }
+  .rooms-table td.nights {
+    width: 70px;
+  }
+}
+
 /* Variant System - Show/Hide Content Based on Body Class */
 /*
 The build script will replace the body class to control what content is visible:
