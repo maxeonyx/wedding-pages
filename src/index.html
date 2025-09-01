@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kibra & Max - Wedding Celebration</title>
     <link rel="stylesheet" href="./styles.css">
-    
+
     <!-- Beautiful wildflower-inspired fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Variant Controller Script -->
     <script>
         // Copy account number to clipboard
@@ -18,18 +21,18 @@
             const accountNumber = document.getElementById('accountNumber').textContent;
             const copyButton = document.querySelector('.copy-button');
             const copyText = copyButton.querySelector('.copy-text');
-            
-            navigator.clipboard.writeText(accountNumber).then(function() {
+
+            navigator.clipboard.writeText(accountNumber).then(function () {
                 // Success feedback
                 copyText.textContent = 'Copied!';
                 copyButton.classList.add('copied');
-                
+
                 // Reset after 2 seconds
-                setTimeout(function() {
+                setTimeout(function () {
                     copyText.textContent = 'Copy';
                     copyButton.classList.remove('copied');
                 }, 2000);
-            }).catch(function(err) {
+            }).catch(function (err) {
                 // Fallback for older browsers
                 const textArea = document.createElement('textarea');
                 textArea.value = accountNumber;
@@ -37,10 +40,10 @@
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
-                
+
                 copyText.textContent = 'Copied!';
                 copyButton.classList.add('copied');
-                setTimeout(function() {
+                setTimeout(function () {
                     copyText.textContent = 'Copy';
                     copyButton.classList.remove('copied');
                 }, 2000);
@@ -48,16 +51,17 @@
         }
     </script>
 </head>
+
 <body class="ceremony-western">
     <div class="container">
         <!-- Header with invitation image -->
         <header class="hero">
             <div class="wildflower-border top"></div>
-            
+
             <div class="invitation-image">
                 <img src="./invitation.jpeg" alt="Kibra & Max Wedding Invitation" class="invitation-img">
             </div>
-            
+
             <!-- Scroll indicator arrow -->
             <div class="scroll-indicator">
                 <div class="scroll-arrow">
@@ -68,7 +72,7 @@
                 </div>
                 <p class="scroll-text">RSVP below</p>
             </div>
-            
+
             <div class="wildflower-border bottom"></div>
         </header>
 
@@ -85,7 +89,9 @@
                     <p class="address">Porirua, Wellington</p>
                 </div>
                 <div class="ceremony-info">
-                    <p>The ceremony will be held in the beautiful gardens of this lovely old villa, weather permitting. Around 60 guests will join us for this intimate celebration, followed by champagne and canapés. Guests are welcome to stay until around 1:30pm.</p>
+                    <p>The ceremony will be held in the beautiful gardens of this lovely old villa, weather permitting.
+                        Around 60 guests will join us for this intimate celebration, followed by champagne and canapés.
+                        Guests are welcome to stay until around 1:30pm.</p>
                 </div>
             </div>
         </section>
@@ -96,7 +102,7 @@
             <div class="reception-only-welcome variant-content" data-show="reception-western,reception-habesha">
                 <p><em>You are warmly invited to join us for our reception celebration.</em></p>
             </div>
-            
+
             <div class="details-card">
                 <h3>Reception</h3>
                 <div class="date-row">
@@ -104,19 +110,24 @@
                 </div>
                 <div class="time-location">
                     <!-- Time varies based on variant -->
-                    <p class="time reception-time-western" data-show="ceremony-western,reception-western">6 o'clock in the evening</p>
-                    <p class="time reception-time-habesha" data-show="ceremony-habesha,reception-habesha">4 o'clock in the afternoon</p>
+                    <p class="time reception-time-western" data-show="ceremony-western,reception-western">6 o'clock in
+                        the evening</p>
+                    <p class="time reception-time-habesha" data-show="ceremony-habesha,reception-habesha">4 o'clock in
+                        the afternoon</p>
                     <p class="venue">St Patrick's College</p>
                     <p class="venue-detail">O'Shea PAC Hall</p>
                     <p class="address">Kilbirnie, Wellington</p>
                 </div>
                 <div class="reception-info">
-                    <p>We'll be hosting the wider Wellington Tigray community with Ethiopian food and drink, dancing and celebration until late into the evening.</p>
+                    <p>We'll be hosting the wider Wellington Tigray community with Ethiopian food and drink, dancing and
+                        celebration until late into the evening.</p>
                 </div>
-                
+
                 <!-- Capacity explanation for reception-only guests -->
                 <div class="capacity-note variant-content" data-show="reception-western,reception-habesha">
-                    <p><small>Due to capacity constraints at our ceremony venue, we're only able to accommodate a limited number of guests for the morning celebration. We're so excited to celebrate with you at the reception!</small></p>
+                    <p><small>Due to capacity constraints at our ceremony venue, we're only able to accommodate a
+                            limited number of guests for the morning celebration. We're so excited to celebrate with you
+                            at the reception!</small></p>
                 </div>
             </div>
         </section>
@@ -125,7 +136,9 @@
         <section class="accommodation-info variant-content" data-show="ceremony-western,reception-western">
             <div class="details-card">
                 <h3>Accommodation</h3>
-                <p>If you need accommodation close by, we recommend the Brentwood hotel, which is reasonably priced and a short walk from the reception venue. Contact us or Nicky and Nathan if you would like to be part of a group booking.</p>
+                <p>If you need accommodation close by, we recommend the Brentwood hotel, which is reasonably priced and
+                    a short walk from the reception venue. Contact us or Nicky and Nathan if you would like to be part
+                    of a group booking.</p>
             </div>
         </section>
 
@@ -133,7 +146,8 @@
         <section class="gap-info variant-content" data-show="ceremony-western,ceremony-habesha">
             <div class="details-card">
                 <h3>Between Ceremony & Reception</h3>
-                <p>After the ceremony venue closes at 1:30pm, we encourage guests to explore Wellington and have lunch before the evening festivities begin.</p>
+                <p>After the ceremony venue closes at 1:30pm, we encourage guests to explore Wellington and have lunch
+                    before the evening festivities begin.</p>
             </div>
         </section>
 
@@ -141,7 +155,8 @@
         <section class="plus-one-info">
             <div class="details-card">
                 <h3>Plus Ones</h3>
-                <p>All plus ones are welcome to attend the reception in the evening, but due to capacity constraints at the ceremony in the morning, we have not extended the ceremony invitation to all partners.</p>
+                <p>All plus ones are welcome to attend the reception in the evening, but due to capacity constraints at
+                    the ceremony in the morning, we have not extended the ceremony invitation to all partners.</p>
             </div>
         </section>
 
@@ -149,22 +164,26 @@
         <section class="dress-code">
             <div class="details-card">
                 <h3>What to Wear</h3>
-                <p>In the morning, western style formal wear is perfect. For the evening celebration, this is also wonderful, though we will be wearing Ethiopian dress and you're welcome to join us in this tradition if you wish.</p>
+                <p>In the morning, western style formal wear is perfect. For the evening celebration, this is also
+                    wonderful, though we will be wearing Ethiopian dress and you're welcome to join us in this tradition
+                    if you wish.</p>
             </div>
         </section>
 
-    <!-- Gifts (shown only for western variants) -->
-    <section class="gifts variant-content" data-show="ceremony-western,reception-western">
+        <!-- Gifts (shown only for western variants) -->
+        <section class="gifts variant-content" data-show="ceremony-western,reception-western">
             <div class="details-card">
                 <h3>Gifts</h3>
-                <p>We are not asking for physical gifts as we have a small home and will be travelling. Instead, we would be grateful for contributions to help us start our married life together.</p>
+                <p>We are not asking for physical gifts as we have a small home and will be travelling. Instead, we
+                    would be grateful for contributions to help us start our married life together.</p>
                 <div class="bank-details">
                     <p><strong>Bank Transfer Details:</strong></p>
                     <p>MAXWELL CLARKE, KIBRA TESFAY</p>
                     <div class="account-number-container">
                         <p class="account-number" id="accountNumber">38-9005-0500590-16</p>
                         <button class="copy-button" onclick="copyAccountNumber()" title="Copy account number">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                             </svg>
@@ -191,4 +210,5 @@
         </footer>
     </div>
 </body>
+
 </html>
