@@ -268,6 +268,22 @@ body {
   font-size: 14px;
 }
 
+/* Ceremony transport note */
+.transport-note {
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: rgba(117, 144, 181, 0.12);
+  border-left: 4px solid var(--wildflower-blue);
+  border-radius: 10px;
+}
+
+.transport-note p {
+  margin: 0;
+  color: var(--wildflower-blue);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
 /* Plus Ones Section */
 .plus-ones-ceremony,
 .plus-ones-reception {
@@ -449,10 +465,8 @@ footer p {
 /* Variant System - Show/Hide Content Based on Body Class */
 /*
 The build script will replace the body class to control what content is visible:
-- 'ceremony-western': Full ceremony + reception info, 6pm reception
-- 'reception-western': Reception only, 6pm reception
-- 'ceremony-habesha': Full ceremony + reception info, 4pm reception
-- 'reception-habesha': Reception only, 4pm reception
+- 'ceremony-western': Full ceremony + reception info
+- 'reception-western': Reception only
 */
 
 /* Hide all variant-specific content by default */
@@ -461,33 +475,25 @@ The build script will replace the body class to control what content is visible:
 }
 
 /* Hide all reception times by default */
-.reception-time-western,
-.reception-time-habesha {
+.reception-time-western {
   display: none;
 }
 
 /* Control variant display through body classes set by the build script */
 
 /* Show ceremony content for ceremony variants */
-body.ceremony-western .variant-content[data-show*="ceremony-western"],
-body.ceremony-habesha .variant-content[data-show*="ceremony-habesha"] {
+body.ceremony-western .variant-content[data-show*="ceremony-western"] {
   display: block;
 }
 
 /* Show reception-only content for reception variants */
-body.reception-western .variant-content[data-show*="reception-western"],
-body.reception-habesha .variant-content[data-show*="reception-habesha"] {
+body.reception-western .variant-content[data-show*="reception-western"] {
   display: block;
 }
 
 /* Show correct reception times */
 body.ceremony-western .reception-time-western,
 body.reception-western .reception-time-western {
-  display: block;
-}
-
-body.ceremony-habesha .reception-time-habesha,
-body.reception-habesha .reception-time-habesha {
   display: block;
 }
 
