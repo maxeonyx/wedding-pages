@@ -4,7 +4,7 @@ Beautiful wildflower-themed wedding website with multiple invitation variants fo
 
 ## 🌻 Features
 
-- **Four variants** with different invitation types and cultural contexts
+- **Two core variants** with tailored information for ceremony + reception or reception-only guests
 - **Beautiful wildflower theme** matching the invitation design  
 - **Responsive design** that works on all devices
 - **Simple build system** using CSS variables for variant control
@@ -15,18 +15,16 @@ Beautiful wildflower-themed wedding website with multiple invitation variants fo
 ```
 wedding-pages/
 ├── src/
-│   ├── images/                 # Variant-specific invitation images
+│   ├── images/                 # Invitation images for each variant
 │   │   ├── Invitation - Ceremony - 6pm.jpeg
-│   │   ├── Invitation - Reception - 6pm.jpeg
-│   │   ├── Invitation - Ceremony - Habesha.jpeg
-│   │   └── Invitation - Reception - Habesha.jpeg
+│   │   └── Invitation - Reception - 6pm.jpeg
 │   ├── index.html              # Source template
 │   └── styles.css              # Wildflower-themed CSS
 ├── public/                     # Generated variants (after build)
-│   ├── ceremony6pm/               # Full ceremony + reception (6pm)
-│   ├── reception6pm/        # Reception only (6pm)  
-│   ├── ceremony4pm/            # Full ceremony + reception (4pm)
-│   └── reception4pm/           # Reception only (4pm)
+│   ├── ceremony6pm/            # Legacy full ceremony + reception link (10am/6pm wording)
+│   ├── reception6pm/           # Legacy reception-only link (6pm wording)
+│   ├── ceremony/               # Primary ceremony invitation (no time in URL)
+│   └── reception/              # Primary reception invitation (no time in URL)
 ├── .github/workflows/         # GitHub Actions for deployment
 ├── build.sh                   # Build script
 └── README.md                  # This file
@@ -43,7 +41,7 @@ cd src && python3 -m http.server 8000
 
 ### Build All Variants
 ```bash
-# Generate all 4 variants with correct images
+# Generate all invitation variants with correct images
 ./build.sh
 ```
 
@@ -59,17 +57,15 @@ cd public && python3 -m http.server 8080
 All content is managed in `src/index.html`. The build system uses CSS variables to show/hide different sections:
 
 ### Variant Types:
-- **`ceremony-western`**: Full ceremony + reception info, 6pm reception
-- **`reception-western`**: Reception only, 6pm reception  
-- **`ceremony-habesha`**: Full ceremony + reception info, 4pm reception
-- **`reception-habesha`**: Reception only, 4pm reception
+- **`ceremony-western`**: Full ceremony + reception info
+- **`reception-western`**: Reception only
 
 ### Key Sections to Edit:
 - **Names & Date**: Update in the hero section
 - **Ceremony Details**: Venue, time, what to expect
 - **Reception Details**: Venue, times (controlled by variant), what to expect  
 - **RSVP Link**: Update the href in the RSVP section
-- **Bank Details**: Update account reception4pm for gifts
+- **Bank Details**: Update account details for gifts
 - **Dress Code**: Modify clothing suggestions
 
 ### Variant-Specific Content:
@@ -77,13 +73,13 @@ Use `data-show` attributes to control which variants show specific content:
 
 ```html
 <!-- Show only for ceremony variants -->
-<div class="variant-content" data-show="ceremony-western,ceremony-habesha">
-    <p>Ceremony-specific reception4pm</p>
+<div class="variant-content" data-show="ceremony-western">
+    <p>Ceremony-specific note</p>
 </div>
 
-<!-- Show only for reception variants -->  
-<div class="variant-content" data-show="reception-western,reception-habesha">
-    <p>Reception-only reception4pm</p>
+<!-- Show only for reception variants -->
+<div class="variant-content" data-show="reception-western">
+    <p>Reception-only note</p>
 </div>
 ```
 
